@@ -1,0 +1,75 @@
+body {
+  background: #f8f9fa;
+  font-family: Arial, Helvetica, sans-serif;
+}
+div.weather-app {
+  border: 1px solid #dadde1;
+  border-radius: 0.25rem;
+  padding: 20px;
+  margin: 20px auto;
+  width: 700px;
+}
+nav {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+button#search-button {
+  color: white;
+  background: #1e56a0;
+  border-color: #1e56a0;
+}
+button#search-button:hover {
+  color: #1e56a0;
+  background: white;
+  border-color: #1e56a0;
+}
+button#current-location-button {
+  color: #1e56a0;
+  background: white;
+  border-color: #1e56a0;
+  position: relative;
+  left: 8px;
+}
+button#current-location-button:hover {
+  color: white;
+  background: #1e56a0;
+  border-color: #1e56a0;
+}
+section div.selected-city {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+img.weather-icon {
+  height: 100px;
+  width: 100px;
+  margin-right: 20px;
+  line-height: 1;
+  position: relative;
+  top: -20px;
+}
+section div.selected-city span.temperature {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+section div.selected-city span.units {
+  position: relative;
+  top: -34px;
+}
+section div.selected-city ul {
+  list-style: none;
+  padding: 0;
+}
+hr {
+  border-color: #1e56a0;
+}
+footer div.weather-preview {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+footer div.weather-preview div.col img.weather-icon-forecast {
+  height: 50px;
+  width: 50px;
+}

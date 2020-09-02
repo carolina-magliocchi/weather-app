@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <nav class="navbar navbar-light bg-light">
+          <form class="form-inline" id="search-form">
+            <input
+              class="form-control mr-sm-2"
+              id="search-text-input"
+              type="search"
+              placeholder="Enter a city"
+              aria-label="Enter a city"
+            />
+            <button class="btn btn-primary" id="search-button" type="submit">
+              Search
+            </button>
+            <button
+              class="btn btn-primary"
+              id="current-location-button"
+              type="button"
+            >
+              Current
+            </button>
+          </form>
+        </nav>
+        <section>
+          <h1></h1>
+          <p1></p1><br />
+          <p2></p2>
+          <div class="row selected-city">
+            <div class="col-6">
+              <div class="clearfix">
+                <img
+                  class="weather-icon float-left"
+                  src="media/sun.svg"
+                  alt="sun"
+                />
+                <div class="float-left">
+                  <span class="temperature" id="temperature"></span>
+                  <span class="units">
+                    <a href="#" id="celsius-symbol">°C</a> |
+                    <a href="#" id="fahrenheit-symbol">°F</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="windSpeed"></span>km/h</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <hr />
+        <footer>
+          <div class="row weather-preview">
+            <div class="col">
+              Tue<br />11/08<br /><img
+                class="weather-icon-forecast"
+                src="media/sun with couds.svg"
+                alt="sun with clouds"
+              /><br />20°C/28°C
+            </div>
+            <div class="col">
+              Wed<br />12/08<br /><img
+                class="weather-icon-forecast"
+                src="media/clouds.svg"
+                alt="clouds"
+              /><br />18°C/24°C
+            </div>
+            <div class="col">
+              Thu<br />13/08<br /><img
+                class="weather-icon-forecast"
+                src="media/rain with clouds.svg"
+                alt="rain with clouds"
+              /><br />15°C/20°C
+            </div>
+            <div class="col">
+              Fri<br />14/08<br /><img
+                class="weather-icon-forecast"
+                src="media/thunderstorm.svg"
+                alt="thunderstorm"
+              /><br />14°C/19°C
+            </div>
+            <div class="col">
+              Sat<br />15/08<br /><img
+                class="weather-icon-forecast"
+                src="media/clouds-wind.svg"
+                alt="clouds and wind"
+              /><br />18°C/23°C
+            </div>
+            <div class="col">
+              Sun<br />16/08<br /><img
+                class="weather-icon-forecast"
+                src="media/sun.svg"
+                alt="sun"
+              /><br />22°C/31°C
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
