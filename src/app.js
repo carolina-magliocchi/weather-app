@@ -47,8 +47,9 @@ function displayWeather(response) {
   document.querySelector(
     "h1"
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
+  celsiusTemperature = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    celsiusTemperature
   );
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
@@ -90,31 +91,36 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+let fahrenheitLink = document.querySelector("#fahrenheit-symbol");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-symbol");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
 searchCity("Paris");
-
-// Change temperature Celsius - Fahrenheit
-function changeToFahrenheit(event) {
-  event.preventDefault();
-  let temperature = 25;
-  let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
-  let fahrenheitSymbol = document.querySelector("#temperature");
-  fahrenheitSymbol.innerHTML = fahrenheitTemperature;
-}
-let fahrenheit = document.querySelector("#fahrenheit-symbol");
-fahrenheit.addEventListener("click", changeToFahrenheit);
-
-function changeToCelsius(event) {
-  event.preventDefault();
-  let temperature = 77;
-  let celsiusTemperature = Math.round(((temperature - 32) * 5) / 9);
-  let celsiusSymbol = document.querySelector("#temperature");
-  celsiusSymbol.innerHTML = celsiusTemperature;
-}
-let celsius = document.querySelector("#celsius-symbol");
-celsius.addEventListener("click", changeToCelsius);
