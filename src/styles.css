@@ -1,6 +1,5 @@
 body {
   display: block;
-  background: #c2e9fb;
   font-family: Arial, Helvetica, sans-serif;
 }
 .weather-app-wrapper {
@@ -13,6 +12,7 @@ div.weather-app {
   padding: 20px;
   margin: 20px auto;
   width: 600px;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 p4 {
   margin-top: 30px;
