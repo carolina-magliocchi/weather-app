@@ -3,14 +3,18 @@ body {
   background: #c2e9fb;
   font-family: Arial, Helvetica, sans-serif;
 }
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
 div.weather-app {
   border: 1px solid #1e56a0;
   border-radius: 0.25rem;
   padding: 20px;
   margin: 20px auto;
-  width: 700px;
+  width: 600px;
 }
-p3 {
+p4 {
   margin-top: 30px;
   font-size: 80%;
   font-weight: 400;
@@ -51,7 +55,6 @@ button#current-location-button:hover {
 }
 section div.selected-city {
   margin-top: 30px;
-  margin-bottom: 20px;
 }
 img.weather-icon {
   height: 100px;
@@ -71,7 +74,7 @@ section div.selected-city span.units {
   top: -34px;
 }
 .weather-temperature .active {
-  color: rgb(33, 33, 33);
+  color: black;
   cursor: default;
 }
 .weather-temperature .active:hover {
@@ -83,14 +86,33 @@ section div.selected-city ul {
 }
 hr {
   border-color: #1e56a0;
+  padding: 0;
+  margin: 0;
 }
 footer div.weather-preview {
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  cursor: pointer;
+  margin-top: 20px;
 }
-footer div.weather-preview div.col img.weather-icon-forecast {
-  height: 50px;
-  width: 50px;
+footer div.weather-preview p3 {
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  height: 15px;
+  line-height: 15px;
+  padding-top: 7px;
+}
+footer div.weather-preview img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+}
+footer div.weather-preview-temperature {
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
+  white-space: nowrap;
 }
