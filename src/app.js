@@ -64,13 +64,53 @@ function displayWeather(response) {
   );
   document
     .querySelector("#icon")
-    .setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
+    .setAttribute("src", changeImage(response.data.weather[0].icon));
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
+}
+
+function changeImage(icon) {
+  let sunny = "media/sun.svg";
+  let sunnyCloudy = "media/sun-clouds.svg";
+  let sunnyCloudyRainy = "media/sun-clouds-rain.svg";
+  let cloudy = "media/clouds.svg";
+  let rainy = "media/rain.svg";
+  let stormy = "media/thunderstorm.svg";
+  let snowy = "media/snow.svg";
+  let clearNight = "media/moon.svg";
+  let cloudyNight = "media/moon-clouds.svg";
+  let rainyNight = "media/moon-clouds-rain.svg";
+  let stormyNight = "media/moon-thunderstorm.svg";
+  let snowyNight = "media/moon-clouds-snow.svg";
+
+  if (icon === "01d") {
+    return sunny;
+  } else if (icon === "01n") {
+    return clearNight;
+  } else if (icon === "02d") {
+    return sunnyCloudy;
+  } else if (icon === "03d" || icon === "04d") {
+    return cloudy;
+  } else if (icon === "02n" || icon === "03n" || icon === "04n") {
+    return cloudyNight;
+  } else if (icon === "09d") {
+    return rainy;
+  } else if (icon === "10d") {
+    return sunnyCloudyRainy;
+  } else if (icon === "09n" || icon === "10n") {
+    return rainyNight;
+  } else if (icon === "11d") {
+    return stormy;
+  } else if (icon === "11n") {
+    return stormyNight;
+  } else if (icon === "13d") {
+    return snowy;
+  } else if (icon === "13n") {
+    return snowyNight;
+  } else {
+    return `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  }
 }
 
 function displayForecast(response) {
@@ -85,11 +125,7 @@ function displayForecast(response) {
       <p3>
         ${forecast.dt_txt}
       </p3>
-      <img
-        src="http://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"
-      />
+      <img src="${changeImage(forecast.weather[0].icon)}" id="icon" />
       <div class="weather-preview-temperature">
         <strong>
           ${Math.round(forecast.main.temp)}°C
