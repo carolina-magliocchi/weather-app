@@ -89,10 +89,10 @@ hr {
   padding: 0;
   margin: 0;
 }
-footer div.weather-preview {
+div.weather-preview {
   margin-top: 20px;
 }
-footer div.weather-preview p3 {
+div.weather-preview p3 {
   color: black;
   font-size: 14px;
   font-weight: 400;
@@ -101,13 +101,13 @@ footer div.weather-preview p3 {
   line-height: 15px;
   padding-top: 7px;
 }
-footer div.weather-preview img {
+div.weather-preview img {
   display: block;
   margin: 0 auto;
   height: 48px;
   width: 48px;
 }
-footer div.weather-preview-temperature {
+div.weather-preview-temperature {
   text-align: center;
   color: black;
   font-size: 14px;
