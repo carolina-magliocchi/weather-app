@@ -120,10 +120,12 @@ function displayForecast(response) {
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
+    let str = forecast.dt_txt;
+    let res = str.substring(11, 16);
     forecastElement.innerHTML += `
     <div class="col-2">
       <p3>
-        ${forecast.dt_txt}
+        ${res}
       </p3>
       <img src="${changeImage(forecast.weather[0].icon)}" id="icon" />
       <div class="weather-preview-temperature">
