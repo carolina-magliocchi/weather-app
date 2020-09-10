@@ -56,6 +56,11 @@ function displayWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     celsiusTemperature
   );
+  document.querySelector(
+    "#description"
+  ).innerHTML = response.data.weather[0].description.replace(/^\w/, (c) =>
+    c.toUpperCase()
+  );
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
   );
