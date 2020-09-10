@@ -100,7 +100,8 @@ div.weather-preview p3 {
   height: 15px;
   line-height: 15px;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  display: block;
 }
 div.weather-preview img {
   display: block;
