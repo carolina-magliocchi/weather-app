@@ -28,7 +28,6 @@ nav {
 .form-control {
   color: #1e56a0;
   border: 1px solid #1e56a0;
-  display: flex;
 }
 .form-control::-webkit-input-placeholder {
   color: #1e56a0;
@@ -37,7 +36,6 @@ button#search-button {
   color: white;
   background: #1e56a0;
   border-color: #1e56a0;
-  display: flex;
 }
 button#search-button:hover {
   color: #1e56a0;
@@ -50,7 +48,6 @@ button#current-location-button {
   border-color: #1e56a0;
   position: relative;
   left: 8px;
-  display: flex;
 }
 button#current-location-button:hover {
   color: white;
