@@ -41,18 +41,6 @@ button#search-button:hover {
   background: white;
   border-color: #1e56a0;
 }
-button#current-location-button {
-  color: #1e56a0;
-  background: white;
-  border-color: #1e56a0;
-  position: relative;
-  left: 8px;
-}
-button#current-location-button:hover {
-  color: white;
-  background: #1e56a0;
-  border-color: #1e56a0;
-}
 section div.selected-city {
   margin-top: 30px;
 }
